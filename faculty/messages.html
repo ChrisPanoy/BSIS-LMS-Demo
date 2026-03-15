@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Faculty Direct Messages</title>
+    <meta name="description" content="SRC LMS Faculty Messages - Communicate directly with students.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .message-thread {
+            background: white;
+            border-radius: 1.25rem;
+            border: 1px solid #f1f5f9;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.22s ease;
+        }
+        .message-thread:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.06);
+            transform: translateX(2px);
+        }
+        .message-thread.active {
+            border-color: #bfdbfe;
+            background: #eff6ff;
+        }
+        .thread-avatar {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        .chat-bubble {
+            max-width: 72%;
+            padding: 0.875rem 1.25rem;
+            border-radius: 1.25rem;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            font-weight: 500;
+        }
+        .chat-bubble.received {
+            background: #f1f5f9;
+            color: #1e293b;
+            border-bottom-left-radius: 0.3rem;
+            align-self: flex-start;
+        }
+        .chat-bubble.sent {
+            background: #2563eb;
+            color: white;
+            border-bottom-right-radius: 0.3rem;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Student Communication</h2>
+                    <h1 class="header-title">Direct Messages</h1>
+                    <p class="header-desc">Communicate directly with students for instructional guidance and support.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: #ecfdf5; padding: 0.5rem 1rem; border-radius: 99px; border: 1px solid #d1fae5;">
+                    <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: block;"></span>
+                    <span style="font-size: 10px; font-weight: 900; color: #059669; text-transform: uppercase; letter-spacing: 0.1em;">12 Students Online</span>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; height: calc(100vh - 14rem);">
+                <!-- Thread List -->
+                <div class="glass-card animate-up" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="padding: 1rem 1.25rem; border-bottom: 1px solid #f1f5f9;">
+                        <div style="position: relative;">
+                            <i data-lucide="search" size="15" style="position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="text" placeholder="Search conversations..." style="width: 100%; padding: 0.75rem 0.875rem 0.75rem 2.5rem; background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 0.875rem; font-family: 'Outfit', sans-serif; font-size: 0.875rem; color: #1e293b; outline: none; transition: all 0.2s;" onfocus="this.style.borderColor='#2563eb';this.style.background='white'" onblur="this.style.borderColor='#f1f5f9';this.style.background='#f8fafc'">
+                        </div>
+                    </div>
+                    <div style="padding: 0.625rem; display: flex; flex-direction: column; gap: 0.375rem; overflow-y: auto; flex: 1;">
+                        <div class="message-thread active">
+                            <div class="thread-avatar" style="background: #ecfdf5; color: #059669;">JD</div>
+                            <div style="flex: 1; min-width: 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.125rem;">
+                                    <h4 style="font-size: 0.875rem; font-weight: 800; color: #1e293b;">John Doe</h4>
+                                    <span style="font-size: 9px; color: #94a3b8; font-weight: 700;">2m</span>
+                                </div>
+                                <p style="font-size: 11px; color: #64748b; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Will the exam cover Chapter 6?</p>
+                            </div>
+                            <span style="width: 18px; height: 18px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 900; color: white; flex-shrink: 0;">1</span>
+                        </div>
+                        <div class="message-thread">
+                            <div class="thread-avatar" style="background: #fdf2f8; color: #db2777;">AS</div>
+                            <div style="flex: 1; min-width: 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.125rem;">
+                                    <h4 style="font-size: 0.875rem; font-weight: 800; color: #1e293b;">Alice Smith</h4>
+                                    <span style="font-size: 9px; color: #94a3b8; font-weight: 700;">1h</span>
+                                </div>
+                                <p style="font-size: 11px; color: #94a3b8; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Thank you for the feedback!</p>
+                            </div>
+                        </div>
+                        <div class="message-thread">
+                            <div class="thread-avatar" style="background: #eef2ff; color: #4f46e5;">DB</div>
+                            <div style="flex: 1; min-width: 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.125rem;">
+                                    <h4 style="font-size: 0.875rem; font-weight: 800; color: #1e293b;">David Brown</h4>
+                                    <span style="font-size: 9px; color: #94a3b8; font-weight: 700;">3h</span>
+                                </div>
+                                <p style="font-size: 11px; color: #94a3b8; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">I submitted the lab exercise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="glass-card animate-up" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; animation-delay: 0.1s;">
+                    <div style="padding: 1.125rem 1.5rem; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 1rem;">
+                        <div class="thread-avatar" style="background: #ecfdf5; color: #059669; width: 2.5rem; height: 2.5rem; font-size: 0.7rem; border-radius: 0.875rem;">JD</div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; font-weight: 800; color: #1e293b;">John Doe</h4>
+                            <p style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">● Online · ID: 2023-0142 · CS101</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-start;">
+                            <div class="chat-bubble received">Good morning, Professor! I wanted to ask if the upcoming exam will cover Chapter 6 as well, or just Chapters 1–5?</div>
+                            <span style="font-size: 9px; color: #94a3b8; font-weight: 700; padding-left: 0.5rem;">John · 9:42 AM</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-end;">
+                            <div class="chat-bubble sent">Good morning, John! The midterm will cover Chapters 1–5 only. Chapter 6 will be part of the final exam. Good luck!</div>
+                            <span style="font-size: 9px; color: #94a3b8; font-weight: 700; padding-right: 0.5rem;">You · 9:45 AM</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem; align-items: flex-start;">
+                            <div class="chat-bubble received">Will the exam cover Chapter 6?</div>
+                            <span style="font-size: 9px; color: #94a3b8; font-weight: 700; padding-left: 0.5rem;">John · 10:02 AM</span>
+                        </div>
+                    </div>
+                    <div style="padding: 1rem 1.5rem; border-top: 1px solid #f1f5f9; display: flex; gap: 0.75rem;">
+                        <input type="text" placeholder="Reply to John..." style="flex: 1; padding: 0.875rem 1.25rem; border: 1px solid #e2e8f0; border-radius: 1.25rem; font-family: 'Outfit', sans-serif; font-size: 0.9rem; outline: none; background: #f8fafc; color: #1e293b; transition: all 0.2s;" onfocus="this.style.borderColor='#2563eb';this.style.background='white'" onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
+                        <button style="width: 3rem; height: 3rem; border-radius: 1rem; background: #2563eb; color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(37,99,235,0.3); transition: all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i data-lucide="send" size="18"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

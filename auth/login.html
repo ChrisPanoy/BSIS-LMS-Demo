@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Institutional Entrance</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #020617;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0.2;
+            }
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2.5rem;
+            padding: 3rem;
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-box {
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            padding: 1rem;
+        }
+
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1.25rem 1.25rem 1.25rem 3.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #6366f1;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #475569;
+            transition: color 0.3s ease;
+        }
+
+        .input-group input:focus+.input-icon {
+            color: #6366f1;
+        }
+
+        .mode-toggle {
+            display: flex;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.4rem;
+            border-radius: 1.25rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 0.9rem;
+            border: none;
+            font-weight: 900;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #64748b;
+            background: transparent;
+        }
+
+        .mode-btn.active {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            height: 4rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 1.25rem;
+            font-weight: 900;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .login-btn:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-orb" style="top: -10%; left: -10%; width: 40%; height: 40%; background: #2563eb;"></div>
+    <div class="glow-orb"
+        style="bottom: -10%; right: -10%; width: 40%; height: 40%; background: #4338ca; animation-delay: 2s;"></div>
+
+    <div class="login-card animate-up">
+        <div class="logo-box">
+            <img src="../assets/logo.png" alt="BSIS LMS" class="logo-img"
+                onerror="this.src='https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/graduation-cap.svg'; this.style.filter='invert(1) brightness(1.5)'">
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h1
+                style="color: white; font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.25rem;">
+                BSIS LMS</h1>
+            <p
+                style="color: #6366f1; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.4em; opacity: 0.6;">
+                Institutional Entrance</p>
+        </div>
+
+        <div class="mode-toggle">
+            <button class="mode-btn active" onclick="switchMode('regular', this)">Regular</button>
+            <button class="mode-btn" onclick="switchMode('qr', this)">Device QR</button>
+        </div>
+
+        <!-- Regular Login Form -->
+        <div id="regular-login">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div
+                    style="padding: 1rem; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 1.25rem; text-align: center; cursor: pointer;">
+                    <i data-lucide="graduation-cap" size="18" style="color: #60a5fa; margin-bottom: 0.5rem;"></i>
+                    <p
+                        style="color: #60a5fa; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">
+                        Student</p>
+                </div>
+                <div
+                    style="padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.25rem; text-align: center; cursor: pointer; opacity: 0.5;">
+                    <i data-lucide="shield-check" size="18" style="color: #94a3b8; margin-bottom: 0.5rem;"></i>
+                    <p
+                        style="color: #94a3b8; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">
+                        Faculty</p>
+                </div>
+            </div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <input type="text" placeholder="Email Address" required>
+                    <i data-lucide="user" class="input-icon" size="20"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i data-lucide="lock" class="input-icon" size="20"></i>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>Login</span>
+                    <i data-lucide="chevron-right" size="18"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- QR Login View -->
+        <div id="qr-login" style="display: none; text-align: center; animation: fadeIn 0.4s ease;">
+            <div
+                style="width: 200px; height: 200px; background: white; margin: 0 auto 1.5rem; padding: 1.5rem; border-radius: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; position: relative;">
+                <i data-lucide="qr-code" size="120" style="color: #0f172a;"></i>
+                <div
+                    style="position: absolute; inset: 0; background: rgba(37, 99, 235, 0.1); border-radius: 2rem; border: 2px solid #2563eb; animation: qrScan 2s infinite alternate;">
+                </div>
+            </div>
+            <p style="color: white; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem;">Scan with Mobile App
+            </p>
+            <p style="color: #94a3b8; font-size: 0.75rem; font-weight: 500; line-height: 1.4;">Open your mobile BSIS LMS
+                app and scan this QR code to sign in instantly.</p>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center; opacity: 0.3;">
+            <p
+                style="color: #94a3b8; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                © 2026 Christopher M. Panoy</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes qrScan {
+            0% {
+                clip-path: inset(0 0 100% 0);
+            }
+
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+
+        function switchMode(mode, btn) {
+            // Update buttons
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update views
+            if (mode === 'qr') {
+                document.getElementById('regular-login').style.display = 'none';
+                document.getElementById('qr-login').style.display = 'block';
+            } else {
+                document.getElementById('regular-login').style.display = 'block';
+                document.getElementById('qr-login').style.display = 'none';
+            }
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            
+            // Show premium loading state
+            const loginBtn = event.target.querySelector('.login-btn');
+            const originalContent = loginBtn.innerHTML;
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<span style="display:flex; align-items:center; gap:8px;"><i data-lucide="loader-2" class="animate-spin" size="18"></i> Authenticating...</span>';
+            if(window.lucide) lucide.createIcons();
+
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Success Popup
+            Swal.fire({
+                title: 'Welcome Back!',
+                text: 'Authentication successful. Redirecting to BSIS LMS Dashboard...',
+                icon: 'success',
+                background: '#0f172a',
+                color: '#ffffff',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            }).then(() => {
+                window.location.href = '../index.html';
+            });
+        }
+    </script>
+</body>
+
+</html>

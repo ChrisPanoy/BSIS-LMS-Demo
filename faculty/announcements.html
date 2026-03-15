@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Faculty Announcements</title>
+    <meta name="description" content="SRC LMS Faculty Announcements - Post and manage institutional notices.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .notice-card {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid #f1f5f9;
+            padding: 1.75rem 2rem;
+            transition: all 0.22s ease;
+        }
+        .notice-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.06);
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Institutional Communication</h2>
+                    <h1 class="header-title">Announcements</h1>
+                    <p class="header-desc">Broadcast notices to students across your assigned sections.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="plus"></i> Post Notice
+                </button>
+            </header>
+
+            <div class="tabs-container animate-up">
+                <button class="tab-btn active"><i data-lucide="globe"></i> Published</button>
+                <button class="tab-btn"><i data-lucide="file-edit"></i> Drafts</button>
+                <button class="tab-btn"><i data-lucide="archive"></i> Archived</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;" class="animate-up">
+                <!-- Announcement 1 -->
+                <div class="notice-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.875rem;">
+                            <div style="width: 2.75rem; height: 2.75rem; background: #eff6ff; color: #2563eb; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="megaphone" size="20"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.05rem; font-weight: 800; color: #1e293b; margin-bottom: 0.125rem;">Midterm Examination Guidelines</h3>
+                                <p style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">CS101 · Computer Science</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
+                            <span class="badge-secondary badge-success">Published</span>
+                            <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Oct 12, 2023</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.9rem; margin-bottom: 1rem;">The midterm examination will cover Chapters 1–5. Students must bring their student ID and a scientific calculator. No mobile phones are allowed during the exam period.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;"><i data-lucide="eye" size="12"></i> 124 Views</span>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;"><i data-lucide="users" size="12"></i> 45 Students</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: #f1f5f9; border: none; font-size: 10px; font-weight: 900; color: #64748b; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">Edit</button>
+                            <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); font-size: 10px; font-weight: 900; color: #dc2626; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;">Archive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcement 2 -->
+                <div class="notice-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.875rem;">
+                            <div style="width: 2.75rem; height: 2.75rem; background: #ecfdf5; color: #059669; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="book-open" size="20"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.05rem; font-weight: 800; color: #1e293b; margin-bottom: 0.125rem;">Lab Exercise Submission Reminder</h3>
+                                <p style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">IT202 · Information Technology</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;">
+                            <span class="badge-secondary badge-success">Published</span>
+                            <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Oct 08, 2023</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.9rem; margin-bottom: 1rem;">Please submit Lab Exercise 4 by October 15. Late submissions will receive a 10% deduction per day. Upload your work through the LMS portal under the Assignments section.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;"><i data-lucide="eye" size="12"></i> 89 Views</span>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;"><i data-lucide="users" size="12"></i> 38 Students</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: #f1f5f9; border: none; font-size: 10px; font-weight: 900; color: #64748b; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">Edit</button>
+                            <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); font-size: 10px; font-weight: 900; color: #dc2626; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;">Archive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

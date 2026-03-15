@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Academic Year</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .active-banner {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+        .banner-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #16a34a;
+            display: inline-block;
+            margin-right: 6px;
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+        }
+        .action-chip {
+            padding: 0.5rem 1rem;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 0.75rem;
+            font-size: 11px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .action-chip:hover {
+            background: white;
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .action-chip.primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        .action-chip.primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h1 class="header-title tracking-tight">Academic Year</h1>
+                    <p class="header-desc">Manage academic cycles, <span style="color: var(--primary); font-weight: 700;">activate</span> new years, and view <span style="color: var(--secondary); font-weight: 700;">analytics</span>.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="plus"></i> New Academic Year
+                </button>
+            </header>
+
+            <!-- Active Year Banner -->
+            <div class="active-banner animate-up">
+                <div class="banner-icon">
+                    <i data-lucide="calendar-days" size="28"></i>
+                </div>
+                <div style="flex: 1;">
+                    <p style="font-size: 10px; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.25rem;">Currently Active Academic Year</p>
+                    <h2 style="font-size: 1.5rem; font-weight: 900; color: #1e293b;">Academic Year 2023-2024</h2>
+                    <p style="font-size: 0.8rem; color: #94a3b8; font-weight: 600; margin-top: 0.25rem;">Aug 15, 2023 &rarr; May 30, 2024</p>
+                </div>
+                <div style="background: #f0fdf4; padding: 0.75rem 1.25rem; border-radius: 1rem; border: 1px solid #dcfce7; color: #166534; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center;">
+                    <span class="status-dot"></span> All new records attach here
+                </div>
+            </div>
+
+            <div class="glass-card animate-up" style="padding: 0; overflow: hidden; position: relative;">
+                <div style="padding: 1.5rem 2rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <i data-lucide="calendar" size="18" style="color: #94a3b8;"></i>
+                        <span style="font-weight: 800; font-size: 0.9rem; color: #475569;">All Academic Years</span>
+                    </div>
+                    <span style="font-size: 10px; font-weight: 900; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.1em;">2 Records</span>
+                </div>
+
+                <div class="data-table">
+                    <div class="table-head" style="grid-template-columns: 2fr 1.5fr 1fr 1fr 1.5fr; background: #f8fafc; border-radius: 0;">
+                        <span>Academic Year</span>
+                        <span>Duration</span>
+                        <span>Status</span>
+                        <span>Usage</span>
+                        <span style="text-align: right;">Actions</span>
+                    </div>
+                    <div class="table-row-group" style="padding: 0;">
+                        <div class="table-row" style="grid-template-columns: 2fr 1.5fr 1fr 1fr 1.5fr; border-radius: 0; border: none; border-bottom: 1px solid #f8fafc; padding: 1.5rem 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 3rem; height: 3rem; background: var(--primary); color: white; border-radius: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);">
+                                    <i data-lucide="calendar" size="18"></i>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 900; color: #1e293b; font-size: 1rem;">2023-2024</span>
+                                    <span style="font-size: 10px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em;">● Current Cycle</span>
+                                </div>
+                            </div>
+                            <span style="font-family: monospace; font-size: 0.85rem; color: #64748b; font-weight: 600;">Aug 15, 2023 &rarr; May 30, 2024</span>
+                            <div>
+                                <span class="badge-secondary badge-success" style="padding: 0.4rem 0.8rem; border-radius: 99px; font-size: 9px;">Active</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem;">
+                                <div style="display: flex; align-items: center; gap: 4px; color: #94a3b8;"><i data-lucide="book-open" size="12"></i> <span style="font-size: 11px; font-weight: 800;">12</span></div>
+                                <div style="display: flex; align-items: center; gap: 4px; color: #94a3b8;"><i data-lucide="users" size="12"></i> <span style="font-size: 11px; font-weight: 800;">245</span></div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                <div class="action-chip"><i data-lucide="bar-chart-3" size="14"></i> Analytics</div>
+                                <div class="action-chip" style="background: #f0fdf4; border-color: #dcfce7; color: #166534;"><i data-lucide="check-circle-2" size="14"></i> Active</div>
+                            </div>
+                        </div>
+
+                        <div class="table-row" style="grid-template-columns: 2fr 1.5fr 1fr 1fr 1.5fr; border-radius: 0; border: none; border-bottom: 1px solid #f8fafc; padding: 1.5rem 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 3rem; height: 3rem; background: #f1f5f9; color: #94a3b8; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+                                    <i data-lucide="calendar" size="18"></i>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 900; color: #1e293b; font-size: 1rem;">2022-2023</span>
+                                    <span style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">Archive Record</span>
+                                </div>
+                            </div>
+                            <span style="font-family: monospace; font-size: 0.85rem; color: #64748b; font-weight: 600;">Aug 12, 2022 &rarr; May 28, 2023</span>
+                            <div>
+                                <span class="badge-secondary" style="padding: 0.4rem 0.8rem; border-radius: 99px; font-size: 9px;">Archived</span>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem;">
+                                <div style="display: flex; align-items: center; gap: 4px; color: #94a3b8;"><i data-lucide="book-open" size="12"></i> <span style="font-size: 11px; font-weight: 800;">8</span></div>
+                                <div style="display: flex; align-items: center; gap: 4px; color: #94a3b8;"><i data-lucide="users" size="12"></i> <span style="font-size: 11px; font-weight: 800;">198</span></div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                <div class="action-chip"><i data-lucide="bar-chart-3" size="14"></i> Analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

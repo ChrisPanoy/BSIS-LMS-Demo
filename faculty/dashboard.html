@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Faculty Command</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .bg-gradient-blue {
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tab-btn {
+            padding: 1rem 2rem;
+            border-radius: 1.25rem;
+            font-weight: 900;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+        }
+        .tab-btn.active {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        .faculty-stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 2.5rem;
+            border: 1px solid #f1f5f9;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faculty-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+        .alert-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.25rem;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .alert-item:hover {
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body style="background-color: #f8fafc;">
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <!-- Header Section -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3rem;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                        <span style="padding: 0.4rem 1.25rem; background: #2563eb; color: white; border-radius: 99px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);">Dashboard</span>
+                        <span style="padding: 0.4rem 1rem; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 99px; color: #64748b; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">
+                            <i data-lucide="calendar" size="12" style="position: relative; top: 1px; margin-right: 4px;"></i> AY 2023-2024
+                        </span>
+                    </div>
+                    <h1 style="font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -0.04em;">
+                        Faculty <span class="bg-gradient-blue">Command</span>.
+                    </h1>
+                    <p style="color: #64748b; font-weight: 500; font-size: 1.125rem; margin-top: 1rem;">Real-time pedagogical oversight and examination orchestration.</p>
+                </div>
+                <button style="height: 4rem; padding: 0 2.5rem; background: #111827; color: white; border-radius: 1.25rem; font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <i data-lucide="plus" size="20"></i> Create Quiz
+                </button>
+            </div>
+
+            <!-- Sub Nav -->
+            <div style="display: flex; gap: 0.5rem; background: white; padding: 0.5rem; border-radius: 2rem; border: 1px solid #f1f5f9; width: fit-content; margin-bottom: 2.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                <button class="tab-btn active"><i data-lucide="bar-chart-3" size="16"></i> Insights</button>
+                <button class="tab-btn"><i data-lucide="book-open" size="16"></i> Quizzes</button>
+                <button class="tab-btn"><i data-lucide="users" size="16"></i> Students</button>
+            </div>
+
+            <!-- Insights View Content -->
+            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                
+                <!-- Stats Row -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                    <div class="faculty-stat-card animate-up" style="animation-delay: 0.1s;">
+                        <i data-lucide="users" size="120" style="position: absolute; right: -1rem; bottom: -1rem; opacity: 0.03; color: #2563eb;"></i>
+                        <div style="width: 3.5rem; height: 3.5rem; background: #eff6ff; color: #3b82f6; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i data-lucide="users" size="28"></i>
+                        </div>
+                        <p style="font-size: 9px; font-weight: 900; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Students</p>
+                        <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em;">245</h3>
+                    </div>
+                    <div class="faculty-stat-card animate-up" style="animation-delay: 0.2s;">
+                        <i data-lucide="library" size="120" style="position: absolute; right: -1rem; bottom: -1rem; opacity: 0.03; color: #6366f1;"></i>
+                        <div style="width: 3.5rem; height: 3.5rem; background: #eef2ff; color: #4f46e5; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i data-lucide="library" size="28"></i>
+                        </div>
+                        <p style="font-size: 9px; font-weight: 900; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Subjects</p>
+                        <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em;">8</h3>
+                    </div>
+                    <div class="faculty-stat-card animate-up" style="animation-delay: 0.3s;">
+                        <i data-lucide="book-open" size="120" style="position: absolute; right: -1rem; bottom: -1rem; opacity: 0.03; color: #8b5cf6;"></i>
+                        <div style="width: 3.5rem; height: 3.5rem; background: #f5f3ff; color: #7c3aed; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i data-lucide="book-open" size="28"></i>
+                        </div>
+                        <p style="font-size: 9px; font-weight: 900; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Quizzes</p>
+                        <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em;">12</h3>
+                    </div>
+                    <div class="faculty-stat-card animate-up" style="animation-delay: 0.4s;">
+                        <i data-lucide="trending-up" size="120" style="position: absolute; right: -1rem; bottom: -1rem; opacity: 0.03; color: #f59e0b;"></i>
+                        <div style="width: 3.5rem; height: 3.5rem; background: #fffbeb; color: #d97706; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <i data-lucide="trending-up" size="28"></i>
+                        </div>
+                        <p style="font-size: 9px; font-weight: 900; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Attempts</p>
+                        <h3 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em;">842</h3>
+                    </div>
+                </div>
+
+                <!-- Lower Section -->
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem;">
+                    <!-- System Integrity Monitor -->
+                    <div class="glass-card" style="padding: 2.5rem; border-radius: 3rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 3rem; height: 3rem; background: #fef2f2; color: #ef4444; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+                                    <i data-lucide="shield-alert" size="24" class="animate-pulse"></i>
+                                </div>
+                                <h2 style="font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em;">System Integrity Monitor</h2>
+                            </div>
+                            <span style="color: #2563eb; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">Live Feed <i data-lucide="chevron-right" size="12" style="position: relative; top: 1px;"></i></span>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="alert-item">
+                                <div style="width: 3.5rem; height: 3.5rem; background: #fef2f2; color: #ef4444; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i data-lucide="shield-alert" size="24"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                        <h4 style="font-size: 14px; font-weight: 900; text-transform: uppercase;">Alice Smith</h4>
+                                        <span style="font-size: 10px; color: #94a3b8; font-weight: 700;"><i data-lucide="history" size="10"></i> 2 mins ago</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: #64748b; font-weight: 600;">
+                                        <span style="color: #ef4444; font-weight: 900; text-transform: uppercase; margin-right: 4px;">TAB SWITCH</span> detected on <span style="font-weight: 900; color: #334155;">Data Structures Quiz</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="alert-item">
+                                <div style="width: 3.5rem; height: 3.5rem; background: #fffbeb; color: #d97706; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i data-lucide="alert-triangle" size="24"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                        <h4 style="font-size: 14px; font-weight: 900; text-transform: uppercase;">David Brown</h4>
+                                        <span style="font-size: 10px; color: #94a3b8; font-weight: 700;"><i data-lucide="history" size="10"></i> 15 mins ago</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: #64748b; font-weight: 600;">
+                                        <span style="color: #d97706; font-weight: 900; text-transform: uppercase; margin-right: 4px;">MULTIPLE DEVICES</span> session collision alert.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Sidebar -->
+                    <div style="background: #0f172a; padding: 2.5rem; border-radius: 3rem; color: white; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                        <i data-lucide="arrow-up-right" size="100" style="position: absolute; top: 1rem; right: 1rem; opacity: 0.1; transform: scale(1.2);"></i>
+                        <h3 style="font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; color: #60a5fa; margin-bottom: 2.5rem;">Subject Performance</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 2rem; flex: 1;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
+                                    <div>
+                                        <p style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">CS101</p>
+                                        <p style="font-size: 14px; font-weight: 700;">Comp Science</p>
+                                    </div>
+                                    <p style="font-size: 1.25rem; font-weight: 900; color: #60a5fa;">88%</p>
+                                </div>
+                                <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 88%; height: 100%; background: linear-gradient(to right, #3b82f6, #6366f1);"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem;">
+                                    <div>
+                                        <p style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">IT202</p>
+                                        <p style="font-size: 14px; font-weight: 700;">Info Tech</p>
+                                    </div>
+                                    <p style="font-size: 1.25rem; font-weight: 900; color: #60a5fa;">74%</p>
+                                </div>
+                                <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 74%; height: 100%; background: linear-gradient(to right, #3b82f6, #6366f1);"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button style="width: 100%; height: 3.5rem; margin-top: 3rem; background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+                            Detail Report <i data-lucide="chevron-right" size="14" style="position: relative; top: 1px;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

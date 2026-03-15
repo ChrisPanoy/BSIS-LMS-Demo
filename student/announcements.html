@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Notices</title>
+    <meta name="description" content="SRC LMS Student Notices - Stay updated with campus announcements.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .notice-card {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid #f1f5f9;
+            padding: 1.75rem 2rem;
+            transition: all 0.22s ease;
+            cursor: pointer;
+        }
+        .notice-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.06);
+            transform: translateX(4px);
+        }
+        .notice-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Stay Updated</h2>
+                    <h1 class="header-title">Campus Notices</h1>
+                    <p class="header-desc">Institutional announcements and important advisories.</p>
+                </div>
+                <span class="badge-secondary badge-success" style="padding: 0.5rem 1.25rem; border-radius: 99px; font-size: 10px; align-self: flex-start; margin-top: 0.5rem;">
+                    <i data-lucide="bell" size="12"></i>&nbsp; 2 New
+                </span>
+            </header>
+
+            <div class="glass-card animate-up" style="padding: 0; overflow: hidden; margin-bottom: 2rem;">
+                <div style="padding: 1.25rem 1.75rem; background: linear-gradient(135deg, #eff6ff, #f5f3ff); border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 0.75rem;">
+                    <i data-lucide="megaphone" size="16" style="color: #2563eb;"></i>
+                    <span style="font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #2563eb;">Priority Announcements</span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0; padding: 1rem;">
+                    <!-- Announcement 1 -->
+                    <div class="notice-card" style="margin-bottom: 0.75rem;">
+                        <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                            <div class="notice-icon" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">
+                                <i data-lucide="megaphone" size="22"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #1e293b;">Midterm Examination Schedule</h3>
+                                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                                        <i data-lucide="calendar" size="11"></i> Oct 12, 2023
+                                    </span>
+                                </div>
+                                <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.9rem; margin-bottom: 1rem;">The midterm examination for all departments will be held from October 20 to October 25. Please check your department's specific schedule on the bulletin board or through your instructors.</p>
+                                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                    <span class="badge-secondary" style="background: #eff6ff; color: #2563eb;">Academic</span>
+                                    <span class="badge-secondary" style="background: #fef2f2; color: #dc2626;">Priority: High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Announcement 2 -->
+                    <div class="notice-card">
+                        <div style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                            <div class="notice-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                                <i data-lucide="star" size="22"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #1e293b;">Annual Intramurals 2023</h3>
+                                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                                        <i data-lucide="calendar" size="11"></i> Oct 05, 2023
+                                    </span>
+                                </div>
+                                <p style="color: var(--text-muted); line-height: 1.65; font-size: 0.9rem; margin-bottom: 1rem;">Get ready for the most awaited event of the year! The Annual Intramurals will be held on November 10–15. Registrations for sports events are now open at the Student Affairs Office.</p>
+                                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                    <span class="badge-secondary" style="background: #ecfdf5; color: #059669;">Events</span>
+                                    <span class="badge-secondary">General</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

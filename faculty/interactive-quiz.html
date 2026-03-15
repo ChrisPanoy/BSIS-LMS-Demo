@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Interactive Quiz</title>
+    <meta name="description" content="SRC LMS Interactive Quiz Builder - Create and deploy interactive assessments.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .quiz-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            transition: all 0.22s ease;
+            cursor: pointer;
+        }
+        .quiz-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.06);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Assessment Builder</h2>
+                    <h1 class="header-title">Interactive Quiz</h1>
+                    <p class="header-desc">Create, configure, and deploy real-time interactive assessments for your students.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="zap"></i> New Quiz
+                </button>
+            </header>
+
+            <div class="stats-grid animate-up">
+                <div class="glass-card stat-card">
+                    <div class="stat-content">
+                        <p class="stat-label">Total Quizzes</p>
+                        <h3 class="stat-value">12</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: var(--secondary); display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="check-circle" size="14"></i> 8 Active
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(37,99,235,0.1); color: var(--primary);">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                </div>
+                <div class="glass-card stat-card" style="animation-delay: 0.1s;">
+                    <div class="stat-content">
+                        <p class="stat-label">Total Attempts</p>
+                        <h3 class="stat-value">842</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: #6366f1; display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="trending-up" size="14"></i> +18% this week
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(99,102,241,0.1); color: #6366f1;">
+                        <i data-lucide="users"></i>
+                    </div>
+                </div>
+                <div class="glass-card stat-card" style="animation-delay: 0.2s;">
+                    <div class="stat-content">
+                        <p class="stat-label">Avg Score</p>
+                        <h3 class="stat-value">78%</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: var(--secondary); display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="bar-chart-3" size="14"></i> Across all subjects
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(16,185,129,0.1); color: var(--secondary);">
+                        <i data-lucide="activity"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;" class="animate-up">
+                <div class="quiz-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem;">
+                        <div style="width: 3rem; height: 3rem; background: #eff6ff; color: #2563eb; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="file-text" size="22"></i>
+                        </div>
+                        <span class="badge-secondary badge-success">Active</span>
+                    </div>
+                    <h3 style="font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.25rem;">Discrete Mathematics Midterm</h3>
+                    <p style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.25rem;">CS101 · 60 Minutes · 50 Questions</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                        <span style="font-size: 11px; font-weight: 700; color: #94a3b8; display: flex; align-items: center; gap: 4px;"><i data-lucide="users" size="12"></i> 34 Attempted</span>
+                        <span style="font-size: 11px; font-weight: 900; color: #2563eb; display: flex; align-items: center; gap: 4px;"><i data-lucide="bar-chart-3" size="12"></i> Avg: 82%</span>
+                    </div>
+                </div>
+
+                <div class="quiz-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem;">
+                        <div style="width: 3rem; height: 3rem; background: #f5f3ff; color: #7c3aed; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="shield-alert" size="22"></i>
+                        </div>
+                        <span class="badge-secondary badge-success">Active</span>
+                    </div>
+                    <h3 style="font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.25rem;">Information Security Finals</h3>
+                    <p style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.25rem;">IT202 · 120 Minutes · 80 Questions</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                        <span style="font-size: 11px; font-weight: 700; color: #94a3b8; display: flex; align-items: center; gap: 4px;"><i data-lucide="users" size="12"></i> 28 Attempted</span>
+                        <span style="font-size: 11px; font-weight: 900; color: #7c3aed; display: flex; align-items: center; gap: 4px;"><i data-lucide="bar-chart-3" size="12"></i> Avg: 74%</span>
+                    </div>
+                </div>
+
+                <div class="quiz-card" style="border: 2px dashed #e2e8f0; background: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 180px; cursor: pointer;" onmouseover="this.style.borderColor='#2563eb';this.style.background='#eff6ff'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#fafafa'">
+                    <div style="width: 3rem; height: 3rem; background: #f1f5f9; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <i data-lucide="plus" size="24" style="color: #94a3b8;"></i>
+                    </div>
+                    <p style="font-size: 0.875rem; font-weight: 700; color: #94a3b8;">Create New Quiz</p>
+                    <p style="font-size: 10px; font-weight: 600; color: #cbd5e1; margin-top: 0.25rem;">Click to start building</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

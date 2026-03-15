@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Admin Overview</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Institutional Intelligence</h2>
+                    <h1 class="header-title tracking-tight">Overview</h1>
+                    <p class="header-desc">Monitoring academic integrity across all subjects and departments.</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                     <div class="header-badge" style="background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 0.5rem; box-shadow: none;">
+                        <i data-lucide="calendar" size="12"></i> AY 2023-2024
+                     </div>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="glass-card stat-card animate-up">
+                    <div class="stat-content">
+                        <p class="stat-label">Total Active Quizzes</p>
+                        <h3 class="stat-value">342</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: var(--secondary); display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="arrow-up" size="14"></i> +12% <span style="color: var(--text-muted); font-weight: 500;">this week</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(37, 99, 235, 0.1); color: var(--primary);">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                </div>
+
+                <div class="glass-card stat-card animate-up" style="animation-delay: 0.1s;">
+                    <div class="stat-content">
+                        <p class="stat-label">Enrolled Students</p>
+                        <h3 class="stat-value">1,284</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: #6366f1; display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="users" size="14"></i> Active <span style="color: var(--text-muted); font-weight: 500;">last 30 days</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i data-lucide="users"></i>
+                    </div>
+                </div>
+
+                <div class="glass-card stat-card animate-up" style="animation-delay: 0.2s;">
+                    <div class="stat-content">
+                        <p class="stat-label">Historical Submissions</p>
+                        <h3 class="stat-value">8,492</h3>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; font-weight: 800; color: var(--secondary); display: flex; align-items: center; gap: 4px;">
+                            <i data-lucide="trending-up" size="14"></i> +24% <span style="color: var(--text-muted); font-weight: 500;">all time</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon-box" style="background: rgba(16, 185, 129, 0.1); color: var(--secondary);">
+                        <i data-lucide="activity"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid-2">
+                <!-- Analytics Card -->
+                <div class="glass-card animate-up" style="background: linear-gradient(135deg, #1e1b4b, #312e81); border: none; color: white; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 1rem;">Campus Analytics</h3>
+                        <p style="color: #a5b4fc; font-weight: 500; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;">
+                            Overall system health is stable. Average integrity score: <strong style="color: white;">99.2%</strong>.
+                        </p>
+                    </div>
+                    <div>
+                        <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 99px; overflow: hidden; margin-bottom: 1rem;">
+                            <div style="width: 99.2%; height: 100%; background: var(--primary); box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #c084fc;">
+                            <span>Platform Trust</span>
+                            <span>99.2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Deployment Card -->
+                <div class="glass-card animate-up" style="animation-delay: 0.1s;">
+                    <h3 style="font-size: 1.25rem; font-weight: 900; color: #111827; margin-bottom: 1.5rem;">Quick Deployment</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="admin/management.html" class="table-row" style="text-decoration: none; grid-template-columns: 1fr auto;">
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: #f8fafc; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted);"><i data-lucide="building" size="18"></i></div>
+                                <div>
+                                    <h4 style="font-size: 0.9rem; font-weight: 800; color: #111827;">Institutional Control</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Assign Faculty & Enroll Students</p>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-right" size="18" style="color: #cbd5e1;"></i>
+                        </a>
+
+                        <a href="admin/users.html" class="table-row" style="text-decoration: none; grid-template-columns: 1fr auto;">
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: #f8fafc; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted);"><i data-lucide="users" size="18"></i></div>
+                                <div>
+                                    <h4 style="font-size: 0.9rem; font-weight: 800; color: #111827;">User Directory</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Manage system accounts</p>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-right" size="18" style="color: #cbd5e1;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-table animate-up" style="margin-top: 3rem;">
+                <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 1.5rem;">Recent System Logs</h3>
+                <div class="table-head" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
+                    <span>Event</span>
+                    <span>User</span>
+                    <span>Timestamp</span>
+                    <span>Status</span>
+                </div>
+                <div class="table-row-group">
+                    <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
+                        <span style="font-weight: 700;">Student Logged In</span>
+                        <span style="font-weight: 800; color: var(--primary);">John Doe</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">2 mins ago</span>
+                        <div><span class="badge-secondary badge-success">Success</span></div>
+                    </div>
+                    <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
+                        <span style="font-weight: 700;">Security Violation</span>
+                        <span style="font-weight: 800; color: var(--danger);">Alice Smith</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">14 mins ago</span>
+                        <div><span class="badge-secondary badge-danger">Alert</span></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./js/sidebar.js"></script>
+</body>
+</html>

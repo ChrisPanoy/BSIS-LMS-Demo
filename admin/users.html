@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | User Management</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .search-container {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3.5rem;
+            background: #f8fafc;
+            border: none;
+            border-radius: 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-input:focus {
+            background: #eff6ff;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+        .avatar-box {
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border: 1px solid rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+        .avatar-faculty { background: #eef2ff; color: #4f46e5; }
+        .avatar-student { background: #ecfdf5; color: #059669; }
+        
+        .role-pill {
+            padding: 0.4rem 0.8rem;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: #f1f5f9;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h1 class="header-title tracking-tight">User Management</h1>
+                    <p class="header-desc">Manage institutional accounts for <span style="color: var(--primary); font-weight: 700;">Faculty</span> and <span style="color: var(--secondary); font-weight: 700;">Students</span>.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="user-plus"></i> Register Student
+                </button>
+            </header>
+
+            <!-- Sub-Tabs -->
+            <div class="tabs-container animate-up">
+                <button class="tab-btn active"><i data-lucide="shield-check"></i> Faculty Members</button>
+                <button class="tab-btn"><i data-lucide="graduation-cap"></i> Registered Students</button>
+            </div>
+
+            <div class="glass-card animate-up" style="padding: 0; overflow: hidden;">
+                <div style="padding: 1.5rem 2rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="search-container">
+                        <i data-lucide="search" class="search-icon" size="18"></i>
+                        <input type="text" class="search-input" placeholder="Search faculty or students...">
+                    </div>
+                    <span style="font-size: 10px; font-weight: 900; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.1em;">124 Records</span>
+                </div>
+
+                <div class="data-table">
+                    <div class="table-head" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; background: #f8fafc; border-radius: 0;">
+                        <span>Identity</span>
+                        <span>Account ID</span>
+                        <span>Role</span>
+                        <span>Status</span>
+                        <span style="text-align: right;">Actions</span>
+                    </div>
+                    <div class="table-row-group" style="padding: 0;">
+                        <!-- Faculty Row 1 -->
+                        <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; border-radius: 0; border: none; border-bottom: 1px solid #f8fafc; padding: 1.25rem 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="avatar-box avatar-faculty">RF</div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 900; color: #1e293b; font-size: 0.95rem;">Dr. Robert Fox</span>
+                                    <span style="font-size: 11px; font-weight: 600; color: #94a3b8; display: flex; align-items: center; gap: 4px;"><i data-lucide="mail" size="10"></i> robert.fox@src.edu.ph</span>
+                                </div>
+                            </div>
+                            <span style="font-family: monospace; font-size: 0.85rem; color: #64748b; font-weight: 800;">EMP-042</span>
+                            <div><span class="role-pill">Dean</span></div>
+                            <div>
+                                <span class="badge-secondary badge-success" style="padding: 0.4rem 0.8rem; border-radius: 99px; font-size: 9px; display: flex; align-items: center; gap: 4px; width: fit-content;">
+                                    <i data-lucide="user-check" size="11"></i> Active
+                                </span>
+                            </div>
+                            <div style="text-align: right; color: #cbd5e1;">
+                                <i data-lucide="chevron-right" size="18" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Faculty Row 2 -->
+                        <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; border-radius: 0; border: none; border-bottom: 1px solid #f8fafc; padding: 1.25rem 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="avatar-box avatar-faculty" style="background: #fff1f2; color: #e11d48;">JC</div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 900; color: #1e293b; font-size: 0.95rem;">Prof. Jane Cooper</span>
+                                    <span style="font-size: 11px; font-weight: 600; color: #94a3b8; display: flex; align-items: center; gap: 4px;"><i data-lucide="mail" size="10"></i> jane.cooper@src.edu.ph</span>
+                                </div>
+                            </div>
+                            <span style="font-family: monospace; font-size: 0.85rem; color: #64748b; font-weight: 800;">EMP-115</span>
+                            <div><span class="role-pill">Instructor</span></div>
+                            <div>
+                                <span class="badge-secondary badge-danger" style="padding: 0.4rem 0.8rem; border-radius: 99px; font-size: 9px; display: flex; align-items: center; gap: 4px; width: fit-content;">
+                                    <i data-lucide="user-x" size="11"></i> Inactive
+                                </span>
+                            </div>
+                            <div style="text-align: right; color: #cbd5e1;">
+                                <i data-lucide="chevron-right" size="18" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Student Row (Mixed for demo consistency) -->
+                        <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; border-radius: 0; border: none; border-bottom: 1px solid #f8fafc; padding: 1.25rem 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="avatar-box avatar-student">JD</div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 900; color: #1e293b; font-size: 0.95rem;">John Doe</span>
+                                    <span style="font-size: 11px; font-weight: 600; color: #94a3b8; display: flex; align-items: center; gap: 4px;"><i data-lucide="mail" size="10"></i> john.doe@src.edu.ph</span>
+                                </div>
+                            </div>
+                            <span style="font-family: monospace; font-size: 0.85rem; color: #64748b; font-weight: 800;">2023-0142</span>
+                            <div><span class="role-pill" style="background: #ecfdf5; color: #065f46;">Student</span></div>
+                            <div>
+                                <span class="badge-secondary badge-success" style="padding: 0.4rem 0.8rem; border-radius: 99px; font-size: 9px; display: flex; align-items: center; gap: 4px; width: fit-content;">
+                                    <i data-lucide="user-check" size="11"></i> Registered
+                                </span>
+                            </div>
+                            <div style="text-align: right; color: #cbd5e1;">
+                                <i data-lucide="chevron-right" size="18" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Faculty Assignments</title>
+    <meta name="description" content="SRC LMS Faculty Assignments - Manage and grade student submissions.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Assessment Management</h2>
+                    <h1 class="header-title">Assignments</h1>
+                    <p class="header-desc">Create and manage assignments, review and grade student submissions.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="plus"></i> Create Assignment
+                </button>
+            </header>
+
+            <div class="tabs-container animate-up">
+                <button class="tab-btn active"><i data-lucide="file-text"></i> Active</button>
+                <button class="tab-btn"><i data-lucide="inbox"></i> Submissions</button>
+                <button class="tab-btn"><i data-lucide="check-circle-2"></i> Graded</button>
+            </div>
+
+            <div class="glass-card animate-up" style="padding: 0; overflow: hidden;">
+                <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #64748b;">Active Assignments</span>
+                    <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">3 Open</span>
+                </div>
+
+                <div class="data-table">
+                    <div class="table-head" style="grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; background: #f8fafc; border-radius: 0;">
+                        <span>Assignment</span>
+                        <span>Subject</span>
+                        <span>Due Date</span>
+                        <span>Submitted</span>
+                        <span style="text-align: right;">Actions</span>
+                    </div>
+                    <div class="table-row-group" style="padding: 0;">
+                        <div class="table-row" style="grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; border-radius: 0; border-bottom: 1px solid #f8fafc; padding: 1.25rem 1.75rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                <span style="font-weight: 800; color: #1e293b; font-size: 0.95rem;">Problem Set 3 — Graph Theory</span>
+                                <span style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em;">Discrete Mathematics</span>
+                            </div>
+                            <span class="badge-secondary" style="width: fit-content;">CS101</span>
+                            <span style="font-size: 0.875rem; font-weight: 700; color: #dc2626;">Oct 25, 2023</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="flex: 1; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 68%; height: 100%; background: #2563eb; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 10px; font-weight: 900; color: #2563eb; white-space: nowrap;">34/50</span>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: #eff6ff; border: none; font-size: 10px; font-weight: 900; color: #2563eb; cursor: pointer; text-transform: uppercase; transition: all 0.2s;">View</button>
+                            </div>
+                        </div>
+
+                        <div class="table-row" style="grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; border-radius: 0; border-bottom: 1px solid #f8fafc; padding: 1.25rem 1.75rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                <span style="font-weight: 800; color: #1e293b; font-size: 0.95rem;">Information Security Case Study</span>
+                                <span style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em;">Info Security</span>
+                            </div>
+                            <span class="badge-secondary" style="width: fit-content;">IT202</span>
+                            <span style="font-size: 0.875rem; font-weight: 700; color: #d97706;">Nov 02, 2023</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="flex: 1; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 40%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 10px; font-weight: 900; color: #d97706; white-space: nowrap;">15/38</span>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: #eff6ff; border: none; font-size: 10px; font-weight: 900; color: #2563eb; cursor: pointer; text-transform: uppercase; transition: all 0.2s;">View</button>
+                            </div>
+                        </div>
+
+                        <div class="table-row" style="grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; border-radius: 0; padding: 1.25rem 1.75rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                                <span style="font-weight: 800; color: #1e293b; font-size: 0.95rem;">Database Design — Lab Exercise 5</span>
+                                <span style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em;">Database Management</span>
+                            </div>
+                            <span class="badge-secondary" style="width: fit-content;">IS303</span>
+                            <span style="font-size: 0.875rem; font-weight: 700; color: #059669;">Nov 10, 2023</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="flex: 1; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden;">
+                                    <div style="width: 20%; height: 100%; background: #10b981; border-radius: 3px;"></div>
+                                </div>
+                                <span style="font-size: 10px; font-weight: 900; color: #059669; white-space: nowrap;">9/42</span>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; border-radius: 0.75rem; background: #eff6ff; border: none; font-size: 10px; font-weight: 900; color: #2563eb; cursor: pointer; text-transform: uppercase; transition: all 0.2s;">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Institutional Management</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Administrative Control</h2>
+                    <h1 class="header-title tracking-tight">Management</h1>
+                    <p class="header-desc">Orchestrate institutional departments, personnel, and academic configurations.</p>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                <!-- Card 1: Departments -->
+                <div class="glass-card animate-up" style="display: flex; flex-direction: column; gap: 1.5rem; cursor: pointer;">
+                    <div class="stat-icon-box" style="background: #eff6ff; color: var(--primary); width: 4rem; height: 4rem; border-radius: 1.25rem;">
+                        <i data-lucide="building" size="32"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 0.5rem;">Department Body</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Manage institutional faculties and colleges.</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                        <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase;">12 Departments</span>
+                        <i data-lucide="arrow-right" size="18" style="color: #cbd5e1;"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: Year Configuration -->
+                <a href="academic-year.html" style="text-decoration: none;">
+                    <div class="glass-card animate-up" style="display: flex; flex-direction: column; gap: 1.5rem; cursor: pointer; height: 100%;">
+                        <div class="stat-icon-box" style="background: #fdf2f8; color: #db2777; width: 4rem; height: 4rem; border-radius: 1.25rem;">
+                            <i data-lucide="calendar" size="32"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 0.5rem;">Academic Tracks</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Configure active semesters and calendar years.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                            <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase;">2 Active Years</span>
+                            <i data-lucide="arrow-right" size="18" style="color: #cbd5e1;"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3: System Branding -->
+                <a href="branding.html" style="text-decoration: none;">
+                    <div class="glass-card animate-up" style="display: flex; flex-direction: column; gap: 1.5rem; cursor: pointer; height: 100%;">
+                        <div class="stat-icon-box" style="background: #f5f3ff; color: #7c3aed; width: 4rem; height: 4rem; border-radius: 1.25rem;">
+                            <i data-lucide="palette" size="32"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 0.5rem;">Visual Identity</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">White-label customization for organization branding.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                            <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase;">Branding Active</span>
+                            <i data-lucide="arrow-right" size="18" style="color: #cbd5e1;"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

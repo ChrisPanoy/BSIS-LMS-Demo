@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Assignments</title>
+    <meta name="description" content="SRC LMS Student Assignments - View and submit your academic assignments.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .assignment-card {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid #f1f5f9;
+            padding: 1.5rem 2rem;
+            transition: all 0.22s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            cursor: pointer;
+        }
+        .assignment-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37,99,235,0.06);
+            transform: translateX(3px);
+        }
+        .due-chip {
+            padding: 0.4rem 0.875rem;
+            border-radius: 99px;
+            font-size: 9px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Academic Tasks</h2>
+                    <h1 class="header-title">My Assignments</h1>
+                    <p class="header-desc">View, manage, and submit your coursework and assessments.</p>
+                </div>
+            </header>
+
+            <div class="tabs-container animate-up">
+                <button class="tab-btn active"><i data-lucide="clock"></i> Pending</button>
+                <button class="tab-btn"><i data-lucide="check-circle-2"></i> Submitted</button>
+                <button class="tab-btn"><i data-lucide="archive"></i> Graded</button>
+            </div>
+
+            <div class="glass-card animate-up" style="padding: 0; overflow: hidden;">
+                <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #64748b;">Pending Submissions</span>
+                    <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">3 Tasks</span>
+                </div>
+                <div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    <!-- Assignment 1 -->
+                    <div class="assignment-card">
+                        <div style="width: 3.5rem; height: 3.5rem; background: #eff6ff; color: #2563eb; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="file-text" size="22"></i>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.2rem;">Discrete Mathematics — Problem Set 3</h3>
+                            <p style="font-size: 11px; font-weight: 600; color: #94a3b8;">CS101 · Dr. Robert Fox</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0;">
+                            <span class="due-chip" style="background: #fef2f2; color: #dc2626;">Due Oct 25</span>
+                            <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Quiz · 50 pts</span>
+                        </div>
+                        <i data-lucide="chevron-right" size="16" style="color: #cbd5e1; flex-shrink: 0;"></i>
+                    </div>
+
+                    <!-- Assignment 2 -->
+                    <div class="assignment-card">
+                        <div style="width: 3.5rem; height: 3.5rem; background: #f5f3ff; color: #7c3aed; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="code-2" size="22"></i>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.2rem;">Information Security Case Analysis</h3>
+                            <p style="font-size: 11px; font-weight: 600; color: #94a3b8;">IT202 · Prof. Jane Cooper</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0;">
+                            <span class="due-chip" style="background: #fffbeb; color: #d97706;">Due Nov 02</span>
+                            <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Essay · 100 pts</span>
+                        </div>
+                        <i data-lucide="chevron-right" size="16" style="color: #cbd5e1; flex-shrink: 0;"></i>
+                    </div>
+
+                    <!-- Assignment 3 -->
+                    <div class="assignment-card">
+                        <div style="width: 3.5rem; height: 3.5rem; background: #ecfdf5; color: #059669; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i data-lucide="database" size="22"></i>
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <h3 style="font-size: 1rem; font-weight: 800; color: #1e293b; margin-bottom: 0.2rem;">Database Management — Lab Exercise 5</h3>
+                            <p style="font-size: 11px; font-weight: 600; color: #94a3b8;">IS303 · Dr. Cody Fisher</p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0;">
+                            <span class="due-chip" style="background: #ecfdf5; color: #059669;">Due Nov 10</span>
+                            <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Lab · 75 pts</span>
+                        </div>
+                        <i data-lucide="chevron-right" size="16" style="color: #cbd5e1; flex-shrink: 0;"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

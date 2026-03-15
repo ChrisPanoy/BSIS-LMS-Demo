@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | All Quizzes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Examination Registry</h2>
+                    <h1 class="header-title tracking-tight">All Quizzes</h1>
+                    <p class="header-desc">Unified repository for all institutional assessments and examinations.</p>
+                </div>
+                <button class="premium-button blue">
+                    <i data-lucide="download"></i> Export Data
+                </button>
+            </header>
+
+            <div class="tabs-container animate-up">
+                <button class="tab-btn active"><i data-lucide="list"></i> All Quizzes</button>
+                <button class="tab-btn"><i data-lucide="archive"></i> Archived</button>
+                <button class="tab-btn"><i data-lucide="file-check"></i> Published</button>
+            </div>
+
+            <div class="data-table animate-up">
+                <div class="table-head" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0.5fr;">
+                    <span>Quiz Title</span>
+                    <span>Department</span>
+                    <span>Faculty</span>
+                    <span>Duration</span>
+                    <span>Status</span>
+                    <span>Actions</span>
+                </div>
+                <div class="table-row-group">
+                    <!-- Row 1 -->
+                    <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0.5fr;">
+                        <div style="display: flex; flex-direction: column;">
+                            <span style="font-weight: 800; font-size: 0.95rem;">Discrete Mathematics Midterm</span>
+                            <span style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">CS-101</span>
+                        </div>
+                        <span class="badge-secondary">Computer Science</span>
+                        <span style="font-weight: 700; color: var(--primary);">Dr. Robert Fox</span>
+                        <span>60 Mins</span>
+                        <div><span class="badge-secondary badge-success">Active</span></div>
+                        <i data-lucide="more-vertical" style="color: var(--text-muted); cursor: pointer;"></i>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0.5fr;">
+                        <div style="display: flex; flex-direction: column;">
+                            <span style="font-weight: 800; font-size: 0.95rem;">Information Security Finals</span>
+                            <span style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">IT-202</span>
+                        </div>
+                        <span class="badge-secondary">Info Tech</span>
+                        <span style="font-weight: 700; color: var(--primary);">Prof. Jane Cooper</span>
+                        <span>120 Mins</span>
+                        <div><span class="badge-secondary badge-success">Active</span></div>
+                        <i data-lucide="more-vertical" style="color: var(--text-muted); cursor: pointer;"></i>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 0.5fr;">
+                        <div style="display: flex; flex-direction: column;">
+                            <span style="font-weight: 800; font-size: 0.95rem;">Database Management Quiz</span>
+                            <span style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">IS-303</span>
+                        </div>
+                        <span class="badge-secondary">Info Systems</span>
+                        <span style="font-weight: 700; color: var(--primary);">Dr. Cody Fisher</span>
+                        <span>45 Mins</span>
+                        <div><span class="badge-secondary badge-danger">Archived</span></div>
+                        <i data-lucide="more-vertical" style="color: var(--text-muted); cursor: pointer;"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

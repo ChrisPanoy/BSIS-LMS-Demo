@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Virtual Classroom</title>
+    <meta name="description" content="SRC LMS Faculty Virtual Classroom - Host and manage live virtual learning sessions.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes pulse-live {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.6; transform: scale(1.15); }
+        }
+        .live-dot       { animation: pulse-live 1.4s infinite; }
+
+        .session-control-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 1.125rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.22s ease;
+        }
+        .session-control-btn:hover { transform: translateY(-2px); }
+
+        .student-row {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.875rem 1.25rem;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            border-radius: 1rem;
+            transition: all 0.2s ease;
+        }
+        .student-row:hover {
+            background: white;
+            border-color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .student-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .recording-card {
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.22s ease;
+        }
+        .recording-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 6px 18px rgba(37,99,235,0.07);
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Live Instruction</h2>
+                    <h1 class="header-title">Virtual Classroom</h1>
+                    <p class="header-desc">Host, manage, and record live virtual sessions for your enrolled sections.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.625rem; background: #fef2f2; padding: 0.625rem 1.25rem; border-radius: 99px; border: 1px solid #fecaca;">
+                    <span class="live-dot" style="width: 9px; height: 9px; background: #ef4444; border-radius: 50%; display: block; flex-shrink: 0;"></span>
+                    <span style="font-size: 10px; font-weight: 900; color: #dc2626; text-transform: uppercase; letter-spacing: 0.12em;">1 Session Live</span>
+                </div>
+            </header>
+
+            <!-- Active Session Banner -->
+            <div class="glass-card animate-up" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); border: none; color: white; margin-bottom: 2.5rem; position: relative; overflow: hidden;">
+                <!-- Decorative blobs -->
+                <div style="position:absolute; top:-60px; right:-60px; width:200px; height:200px; background:#4338ca; border-radius:50%; opacity:0.15; pointer-events:none;"></div>
+                <div style="position:absolute; bottom:-40px; left: 40%; width:140px; height:140px; background:#2563eb; border-radius:50%; opacity:0.1; pointer-events:none;"></div>
+
+                <div style="position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
+                    <div style="display:flex; align-items:center; gap:1.5rem;">
+                        <div style="width:4.5rem; height:4.5rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:1.5rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <i data-lucide="video" size="30" style="color:#a5b4fc;"></i>
+                        </div>
+                        <div>
+                            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+                                <span class="live-dot" style="width:8px; height:8px; background:#4ade80; border-radius:50%; display:block;"></span>
+                                <span style="font-size:10px; font-weight:900; color:#4ade80; text-transform:uppercase; letter-spacing:0.18em;">Live Now · 00:24:37</span>
+                            </div>
+                            <h3 style="font-size:1.35rem; font-weight:900; margin-bottom:0.375rem; letter-spacing:-0.01em;">Discrete Mathematics — Lecture 12</h3>
+                            <p style="font-size:0.875rem; color:#a5b4fc; font-weight:600;">CS101 · Graph Theory &amp; Algorithms · <span style="color:#e0e7ff;">32 students joined</span></p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:0.875rem; flex-wrap:wrap;">
+                        <button class="session-control-btn" style="background:rgba(255,255,255,0.08); color:#e0e7ff; border:1px solid rgba(255,255,255,0.12);">
+                            <i data-lucide="mic-off" size="16"></i> Mute All
+                        </button>
+                        <button class="session-control-btn" style="background:rgba(255,255,255,0.08); color:#e0e7ff; border:1px solid rgba(255,255,255,0.12);">
+                            <i data-lucide="share-2" size="16"></i> Share Screen
+                        </button>
+                        <button class="session-control-btn" style="background:#ef4444; color:white; box-shadow:0 8px 20px rgba(239,68,68,0.3);">
+                            <i data-lucide="phone-off" size="16"></i> End Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div style="display:grid; grid-template-columns:1fr 340px; gap:2rem;">
+
+                <!-- Left: Participants + Chat-like feed -->
+                <div style="display:flex; flex-direction:column; gap:1.75rem;">
+
+                    <!-- Stats row -->
+                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;" class="animate-up">
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">Students Joined</p>
+                                <h3 class="stat-value">32</h3>
+                                <p style="margin-top:0.4rem; font-size:0.7rem; font-weight:800; color:var(--secondary); display:flex; align-items:center; gap:4px;"><i data-lucide="users" size="13"></i> of 45 enrolled</p>
+                            </div>
+                            <div class="stat-icon-box" style="background:rgba(37,99,235,0.1); color:var(--primary);"><i data-lucide="users"></i></div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">Avg Attendance</p>
+                                <h3 class="stat-value">89%</h3>
+                                <p style="margin-top:0.4rem; font-size:0.7rem; font-weight:800; color:var(--secondary); display:flex; align-items:center; gap:4px;"><i data-lucide="trending-up" size="13"></i> This semester</p>
+                            </div>
+                            <div class="stat-icon-box" style="background:rgba(16,185,129,0.1); color:var(--secondary);"><i data-lucide="activity"></i></div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">Session Duration</p>
+                                <h3 class="stat-value">24m</h3>
+                                <p style="margin-top:0.4rem; font-size:0.7rem; font-weight:800; color:#6366f1; display:flex; align-items:center; gap:4px;"><i data-lucide="clock" size="13"></i> Elapsed</p>
+                            </div>
+                            <div class="stat-icon-box" style="background:rgba(99,102,241,0.1); color:#6366f1;"><i data-lucide="timer"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Participant list -->
+                    <div class="glass-card animate-up" style="padding:0; overflow:hidden;">
+                        <div style="padding:1.125rem 1.5rem; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.15em; color:#64748b;">Participants (32)</span>
+                            <span style="font-size:10px; font-weight:900; color:#10b981; text-transform:uppercase; letter-spacing:0.1em; display:flex; align-items:center; gap:4px;">
+                                <i data-lucide="wifi" size="11"></i> All Online
+                            </span>
+                        </div>
+                        <div style="padding:0.875rem; display:flex; flex-direction:column; gap:0.5rem; max-height:340px; overflow-y:auto;">
+                            <!-- Student rows -->
+                            <div class="student-row">
+                                <div class="student-avatar" style="background:#ecfdf5; color:#059669;">JD</div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b;">John Doe</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">2023-0142</p>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:0.5rem;">
+                                    <span style="font-size:9px; font-weight:900; color:#10b981; background:#ecfdf5; padding:0.2rem 0.6rem; border-radius:99px; text-transform:uppercase; letter-spacing:0.08em;">Active</span>
+                                    <i data-lucide="mic" size="14" style="color:#94a3b8;"></i>
+                                    <i data-lucide="video" size="14" style="color:#94a3b8;"></i>
+                                </div>
+                            </div>
+                            <div class="student-row">
+                                <div class="student-avatar" style="background:#fdf2f8; color:#db2777;">AS</div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b;">Alice Smith</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">2023-0089</p>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:0.5rem;">
+                                    <span style="font-size:9px; font-weight:900; color:#10b981; background:#ecfdf5; padding:0.2rem 0.6rem; border-radius:99px; text-transform:uppercase; letter-spacing:0.08em;">Active</span>
+                                    <i data-lucide="mic-off" size="14" style="color:#f87171;"></i>
+                                    <i data-lucide="video" size="14" style="color:#94a3b8;"></i>
+                                </div>
+                            </div>
+                            <div class="student-row">
+                                <div class="student-avatar" style="background:#eef2ff; color:#4f46e5;">DB</div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b;">David Brown</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">2023-0147</p>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:0.5rem;">
+                                    <span style="font-size:9px; font-weight:900; color:#d97706; background:#fffbeb; padding:0.2rem 0.6rem; border-radius:99px; text-transform:uppercase; letter-spacing:0.08em;">Away</span>
+                                    <i data-lucide="mic" size="14" style="color:#94a3b8;"></i>
+                                    <i data-lucide="video-off" size="14" style="color:#f87171;"></i>
+                                </div>
+                            </div>
+                            <div class="student-row">
+                                <div class="student-avatar" style="background:#fff1f2; color:#e11d48;">MG</div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b;">Maria Garcia</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">2023-0223</p>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:0.5rem;">
+                                    <span style="font-size:9px; font-weight:900; color:#10b981; background:#ecfdf5; padding:0.2rem 0.6rem; border-radius:99px; text-transform:uppercase; letter-spacing:0.08em;">Active</span>
+                                    <i data-lucide="mic" size="14" style="color:#94a3b8;"></i>
+                                    <i data-lucide="video" size="14" style="color:#94a3b8;"></i>
+                                </div>
+                            </div>
+                            <!-- More students summary -->
+                            <div style="text-align:center; padding:0.625rem; background:#f8fafc; border-radius:0.875rem; border:1px dashed #e2e8f0; cursor:pointer;" onmouseover="this.style.borderColor='#bfdbfe'" onmouseout="this.style.borderColor='#e2e8f0'">
+                                <span style="font-size:10px; font-weight:900; color:#94a3b8; text-transform:uppercase; letter-spacing:0.1em;">+ 28 more participants</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Upcoming sessions + Recordings -->
+                <div style="display:flex; flex-direction:column; gap:1.75rem;">
+
+                    <!-- Start new session -->
+                    <div class="glass-card animate-up" style="padding:1.5rem; display:flex; flex-direction:column; gap:1rem;">
+                        <h3 style="font-size:1rem; font-weight:900; color:#1e293b; display:flex; align-items:center; gap:0.625rem;">
+                            <i data-lucide="plus-circle" size="18" style="color:#2563eb;"></i> Start New Session
+                        </h3>
+                        <div>
+                            <label style="display:block; font-size:9px; font-weight:900; color:#94a3b8; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem;">Subject</label>
+                            <select style="width:100%; padding:0.75rem 1rem; border:1px solid #e2e8f0; border-radius:0.875rem; font-family:'Outfit',sans-serif; font-size:0.875rem; font-weight:700; color:#1e293b; background:#f8fafc; outline:none; transition:all 0.2s;" onfocus="this.style.borderColor='#2563eb'" onblur="this.style.borderColor='#e2e8f0'">
+                                <option>CS101 — Discrete Mathematics</option>
+                                <option>IT202 — Information Security</option>
+                                <option>IS303 — Database Management</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display:block; font-size:9px; font-weight:900; color:#94a3b8; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem;">Topic</label>
+                            <input type="text" placeholder="e.g. Chapter 5 — Tree Structures" style="width:100%; padding:0.75rem 1rem; border:1px solid #e2e8f0; border-radius:0.875rem; font-family:'Outfit',sans-serif; font-size:0.875rem; font-weight:500; color:#1e293b; background:#f8fafc; outline:none; transition:all 0.2s; box-sizing:border-box;" onfocus="this.style.borderColor='#2563eb';this.style.background='white'" onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
+                        </div>
+                        <button style="width:100%; padding:0.875rem; background:#2563eb; color:white; border:none; border-radius:1rem; font-family:'Outfit',sans-serif; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.625rem; box-shadow:0 8px 20px rgba(37,99,235,0.25); transition:all 0.22s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px rgba(37,99,235,0.35)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 20px rgba(37,99,235,0.25)'">
+                            <i data-lucide="video" size="16"></i> Launch Classroom
+                        </button>
+                    </div>
+
+                    <!-- Recordings -->
+                    <div class="glass-card animate-up" style="padding:0; overflow:hidden;" style="animation-delay:0.1s;">
+                        <div style="padding:1.125rem 1.5rem; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.15em; color:#64748b;">Past Recordings</span>
+                            <span style="font-size:10px; font-weight:900; color:#2563eb; text-transform:uppercase; letter-spacing:0.1em; cursor:pointer;">View All</span>
+                        </div>
+                        <div style="padding:0.875rem; display:flex; flex-direction:column; gap:0.625rem;">
+                            <div class="recording-card">
+                                <div style="width:2.75rem; height:2.75rem; background:#fef2f2; color:#dc2626; border-radius:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                    <i data-lucide="film" size="20"></i>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b; margin-bottom:0.125rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Lecture 11 — Graph Theory Basics</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">CS101 · Oct 11 · 1h 24m</p>
+                                </div>
+                                <i data-lucide="download" size="15" style="color:#cbd5e1; flex-shrink:0;"></i>
+                            </div>
+                            <div class="recording-card">
+                                <div style="width:2.75rem; height:2.75rem; background:#eff6ff; color:#2563eb; border-radius:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                    <i data-lucide="film" size="20"></i>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b; margin-bottom:0.125rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Lecture 10 — Set Theory Review</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">CS101 · Oct 08 · 58m</p>
+                                </div>
+                                <i data-lucide="download" size="15" style="color:#cbd5e1; flex-shrink:0;"></i>
+                            </div>
+                            <div class="recording-card">
+                                <div style="width:2.75rem; height:2.75rem; background:#f5f3ff; color:#7c3aed; border-radius:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                    <i data-lucide="film" size="20"></i>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <p style="font-size:0.875rem; font-weight:800; color:#1e293b; margin-bottom:0.125rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Firewall Configuration — Hands-on</p>
+                                    <p style="font-size:10px; font-weight:700; color:#94a3b8;">IT202 · Oct 07 · 1h 10m</p>
+                                </div>
+                                <i data-lucide="download" size="15" style="color:#cbd5e1; flex-shrink:0;"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

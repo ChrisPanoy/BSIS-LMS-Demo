@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | My Profile</title>
+    <meta name="description" content="SRC LMS Student Profile - View academic record and personal information.">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Student Record</h2>
+                    <h1 class="header-title">My Profile</h1>
+                    <p class="header-desc">Your personal academic record and enrolled subjects.</p>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+                <!-- Profile Card -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;" class="animate-up">
+                    <div class="glass-card" style="text-align: center; padding: 2.5rem;">
+                        <div style="width: 6rem; height: 6rem; background: linear-gradient(135deg, #2563eb, #4338ca); border-radius: 2rem; padding: 3px; margin: 0 auto 1.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.3);">
+                            <div style="width: 100%; height: 100%; background: white; border-radius: 1.8rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: #1e293b;">JD</div>
+                        </div>
+                        <h2 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 0.25rem;">John Doe</h2>
+                        <p style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem;">Student ID: 2023-0142</p>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; text-align: left;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem; background: #f8fafc; border-radius: 1rem;">
+                                <i data-lucide="mail" size="16" style="color: #94a3b8; flex-shrink: 0;"></i>
+                                <div>
+                                    <p style="font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.125rem;">Email</p>
+                                    <p style="font-size: 0.8rem; font-weight: 700; color: #1e293b;">john.doe@src.edu.ph</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem; background: #f8fafc; border-radius: 1rem;">
+                                <i data-lucide="building" size="16" style="color: #94a3b8; flex-shrink: 0;"></i>
+                                <div>
+                                    <p style="font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.125rem;">Department</p>
+                                    <p style="font-size: 0.8rem; font-weight: 700; color: #1e293b;">Computer Science</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem; background: #f8fafc; border-radius: 1rem;">
+                                <i data-lucide="book" size="16" style="color: #94a3b8; flex-shrink: 0;"></i>
+                                <div>
+                                    <p style="font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.125rem;">Year Level</p>
+                                    <p style="font-size: 0.8rem; font-weight: 700; color: #1e293b;">3rd Year · 1st Semester</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem; background: #ecfdf5; border-radius: 1rem; border: 1px solid #d1fae5;">
+                                <i data-lucide="shield-check" size="16" style="color: #059669; flex-shrink: 0;"></i>
+                                <div>
+                                    <p style="font-size: 9px; font-weight: 700; color: #059669; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.125rem;">Account Status</p>
+                                    <p style="font-size: 0.8rem; font-weight: 900; color: #059669;">Active & Verified</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Record -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;" class="animate-up" style="animation-delay: 0.1s;">
+                    <!-- GWA Card -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">GWA</p>
+                                <h3 class="stat-value">3.85</h3>
+                            </div>
+                            <div class="stat-icon-box" style="background: rgba(37,99,235,0.1); color: var(--primary);"><i data-lucide="trending-up"></i></div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">Units</p>
+                                <h3 class="stat-value">21</h3>
+                            </div>
+                            <div class="stat-icon-box" style="background: rgba(99,102,241,0.1); color: #6366f1;"><i data-lucide="book-open"></i></div>
+                        </div>
+                        <div class="glass-card stat-card">
+                            <div class="stat-content">
+                                <p class="stat-label">Exams Done</p>
+                                <h3 class="stat-value">14</h3>
+                            </div>
+                            <div class="stat-icon-box" style="background: rgba(16,185,129,0.1); color: var(--secondary);"><i data-lucide="check-circle-2"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Enrolled Subjects -->
+                    <div class="glass-card" style="padding: 0; overflow: hidden;">
+                        <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; color: #64748b;">Enrolled Subjects — AY 2023-2024</span>
+                            <span style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em;">3 Subjects</span>
+                        </div>
+                        <div class="data-table">
+                            <div class="table-head" style="grid-template-columns: 2fr 1fr 1fr 1fr; background: #f8fafc; border-radius: 0;">
+                                <span>Subject</span>
+                                <span>Code</span>
+                                <span>Units</span>
+                                <span>Grade</span>
+                            </div>
+                            <div class="table-row-group" style="padding: 0;">
+                                <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr; border-radius: 0; border-bottom: 1px solid #f8fafc; padding: 1.125rem 1.75rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <span style="font-weight: 800; color: #1e293b;">Discrete Mathematics</span>
+                                        <span style="font-size: 10px; color: #94a3b8; font-weight: 700; margin-top: 0.1rem;">Dr. Robert Fox</span>
+                                    </div>
+                                    <span class="badge-secondary" style="width: fit-content;">CS101</span>
+                                    <span style="font-weight: 700;">3 units</span>
+                                    <span style="font-weight: 900; color: #2563eb;">In Progress</span>
+                                </div>
+                                <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr; border-radius: 0; border-bottom: 1px solid #f8fafc; padding: 1.125rem 1.75rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <span style="font-weight: 800; color: #1e293b;">Information Security</span>
+                                        <span style="font-size: 10px; color: #94a3b8; font-weight: 700; margin-top: 0.1rem;">Prof. Jane Cooper</span>
+                                    </div>
+                                    <span class="badge-secondary" style="width: fit-content;">IT202</span>
+                                    <span style="font-weight: 700;">3 units</span>
+                                    <span style="font-weight: 900; color: #2563eb;">In Progress</span>
+                                </div>
+                                <div class="table-row" style="grid-template-columns: 2fr 1fr 1fr 1fr; border-radius: 0; padding: 1.125rem 1.75rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <span style="font-weight: 800; color: #1e293b;">Database Management</span>
+                                        <span style="font-size: 10px; color: #94a3b8; font-weight: 700; margin-top: 0.1rem;">Dr. Cody Fisher</span>
+                                    </div>
+                                    <span class="badge-secondary" style="width: fit-content;">IS303</span>
+                                    <span style="font-weight: 700;">3 units</span>
+                                    <span style="font-weight: 900; color: #2563eb;">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+</html>

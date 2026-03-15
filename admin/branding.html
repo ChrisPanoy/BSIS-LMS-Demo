@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRC LMS | Branding Identity</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .branding-input {
+            width: 100%;
+            padding: 1.25rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.25rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e293b;
+            outline: none;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .branding-input:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .color-bubble {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 3px solid transparent;
+        }
+
+        .color-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        .color-bubble.active {
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            <header class="page-header animate-up">
+                <div>
+                    <h2 class="header-subtitle">Visual Experience</h2>
+                    <h1 class="header-title tracking-tight">System Branding</h1>
+                    <p class="header-desc">Customize the institutional visual identity across all portals.</p>
+                </div>
+            </header>
+
+            <div class="content-grid-2">
+                <!-- Configuration Form -->
+                <div class="glass-card animate-up" style="padding: 2.5rem;">
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 900; color: #1e293b; margin-bottom: 0.5rem;">
+                            Configuration</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Modify system appearance tokens.</p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div>
+                            <label
+                                style="display: block; font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem;">System
+                                Name</label>
+                            <input type="text" class="branding-input" value="SRC LMS SYSTEM">
+                        </div>
+
+                        <div>
+                            <label
+                                style="display: block; font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">Sidebar
+                                Theme Color</label>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <div class="color-bubble active" style="background: #0f172a;"></div>
+                                <div class="color-bubble" style="background: #1e1b4b;"></div>
+                                <div class="color-bubble" style="background: #134e4a;"></div>
+                                <div class="color-bubble" style="background: #4c1d95;"></div>
+                                <div
+                                    style="width: 3.5rem; height: 3.5rem; border-radius: 1.25rem; background: #f1f5f9; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #94a3b8;">
+                                    <i data-lucide="plus" size="20"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                style="display: block; font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;">Upload
+                                Logo (Transparency Recommended)</label>
+                            <div style="width: 100%; padding: 3rem; border: 2px dashed #e2e8f0; border-radius: 2rem; text-align: center; cursor: pointer; transition: all 0.2s ease;"
+                                onmouseover="this.style.borderColor='#6366f1'; this.style.background='#f5f3ff'"
+                                onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='transparent'">
+                                <i data-lucide="upload-cloud" size="40"
+                                    style="color: var(--primary); margin-bottom: 1rem;"></i>
+                                <p style="font-size: 0.9rem; font-weight: 600; color: #64748b;">Drop institutional logo
+                                    here or browse</p>
+                                <p style="font-size: 11px; color: #94a3b8; margin-top: 0.5rem;">PNG, SVG or WEBP (Max
+                                    2MB)</p>
+                            </div>
+                        </div>
+
+                        <button class="premium-button blue" style="width: 100%;">
+                            Save Identity Changes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Preview Column -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="glass-card animate-up" style="animation-delay: 0.1s; padding: 0; overflow: hidden;">
+                        <div style="padding: 2.5rem 2.5rem 1rem;">
+                            <h3 style="font-size: 1.25rem; font-weight: 900; color: #1e293b;">Live Preview</h3>
+                            <p style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;">Sidebar Appearance
+                                (Scale 1:1)</p>
+                        </div>
+
+                        <div
+                            style="margin: 0 2rem 2rem; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; background: #0f172a; height: 450px;">
+                            <!-- Mock Sidebar Mini -->
+                            <div
+                                style="padding: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                                <div
+                                    style="width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 1.25rem; display: flex; align-items: center; justify-content: center;">
+                                    <i data-lucide="graduation-cap" size="40" style="color: var(--primary);"></i>
+                                </div>
+                                <p
+                                    style="color: white; font-weight: 900; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em;">
+                                    SRC LMS SYSTEM</p>
+                            </div>
+                            <div style="padding: 0 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <div
+                                    style="height: 48px; background: rgba(255,255,255,0.1); border-radius: 1rem; width: 100%;">
+                                </div>
+                                <div
+                                    style="height: 48px; background: transparent; border-radius: 1rem; width: 100%; border: 1px solid rgba(255,255,255,0.05);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card animate-up"
+                        style="animation-delay: 0.2s; background: #1e293b; color: white;">
+                        <h4 style="font-size: 1.1rem; font-weight: 900; margin-bottom: 1rem;">Branding Policy</h4>
+                        <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">Identity changes are propagated
+                            instantly to all authorized users across the institutional network. Logo assets should be
+                            optimized for clarity on retina displays.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/sidebar.js"></script>
+</body>
+
+</html>
