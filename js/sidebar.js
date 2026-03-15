@@ -105,6 +105,34 @@
             </a>`;
     }
 
+    function handleLogout(event) {
+        event.preventDefault();
+        const logoutUrl = event.currentTarget.href;
+
+        if (window.Swal) {
+            Swal.fire({
+                title: 'Sign Out?',
+                text: "You are about to end your BSIS LMS demo session.",
+                icon: 'warning',
+                background: '#0f172a',
+                color: '#ffffff',
+                showCancelButton: true,
+                confirmButtonColor: '#2563eb',
+                cancelButtonColor: '#1e293b',
+                confirmButtonText: 'Yes, sign out',
+                cancelButtonText: 'Stay logged in'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = logoutUrl;
+                }
+            });
+        } else {
+            if (confirm('Exit demo? (Sign out is simulated)')) {
+                window.location.href = logoutUrl;
+            }
+        }
+    }
+
     // ── Sidebar HTML ─────────────────────────────────────────────────────────
     const sidebarHTML = `
         <aside class="sidebar" id="main-sidebar">
@@ -112,7 +140,7 @@
                 <div class="logo-container">
                     <img
                         src="${root}assets/logo.png"
-                        alt="SRC LMS"
+                        alt="BSIS LMS"
                         class="system-logo"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                     >
@@ -140,7 +168,7 @@
                             <p>${currentRole.badge}</p>
                         </div>
                     </div>
-                    <a href="${root}auth/login.html" class="sign-out-btn" onclick="return confirm('Exit demo? (Sign out is simulated)')">
+                    <a href="${root}auth/login.html" class="sign-out-btn" onclick="window.handleLogout(event)">
                         <i data-lucide="log-out" style="width:16px;height:16px;"></i>
                         SIGN OUT
                     </a>
@@ -148,11 +176,21 @@
             </div>
         </aside>`;
 
+    // Expose globally for onclick
+    window.handleLogout = handleLogout;
+
     // ── Inject sidebar into container ─────────────────────────────────────────
     function injectSidebar() {
         const container = document.getElementById('sidebar-container');
         if (container) {
             container.innerHTML = sidebarHTML;
+        }
+
+        // Auto-inject SweetAlert2 if not present
+        if (!document.querySelector('script[src*="sweetalert2"]')) {
+            const swalScript = document.createElement('script');
+            swalScript.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+            document.head.appendChild(swalScript);
         }
     }
 
